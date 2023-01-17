@@ -229,6 +229,18 @@ $curPage = $APPLICATION->GetCurPage(true);
 				);
 			?>
 		</div>
+	<div class="error-sender-div">
+			<?
+				$APPLICATION->IncludeComponent(
+					"samson:error.send.message",
+					".default",
+					array(
+					),
+					false
+				);
+			?>
+	</div>
+
 	</header>
 
 	<div class="workarea">
