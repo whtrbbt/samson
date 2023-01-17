@@ -24,9 +24,12 @@ use \Bitrix\Main\Localization\Loc;
  * @var CatalogSectionComponent $component
  */
 ?>
-
+<?
+//включаем блок отображения элемента управления добавления в сравнение
+$arParams['DISPLAY_COMPARE']=true;
+?>
 <div class="product-item">
-	<div><H1>TEST</H1></div>
+
 	<? if ($itemHasDetailUrl): ?>
 	<a class="product-item-image-wrapper" href="<?=$item['DETAIL_PAGE_URL']?>" title="<?=$imgTitle?>"
 		data-entity="image-wrapper">
@@ -646,6 +649,7 @@ use \Bitrix\Main\Localization\Loc;
 	{
 		?>
 		<div class="product-item-compare-container">
+			<? if (false) :?>
 			<div class="product-item-compare">
 				<div class="checkbox">
 					<label id="<?=$itemIds['COMPARE_LINK']?>">
@@ -654,7 +658,30 @@ use \Bitrix\Main\Localization\Loc;
 					</label>
 				</div>
 			</div>
+			<?endif;?>
+			<div class="compare-сustome">						
+			<?
+				$iblockid = $item['IBLOCK_ID'];
+				$id=$item['ID'];
+				if(isset($_SESSION["CATALOG_COMPARE_LIST"][$iblockid]["ITEMS"][$id]))
+				{
+					$checked='checked';
+				}
+				else
+				{
+					$checked='';
+				}
+			?>
+				<div class="checkbox">
+					<label class="m-0">									
+						<input <?=$checked;?> type="checkbox" id="compareid_<?=$item['ID'];?>" onchange="compare_tov(<?=$item['ID'];?>);">
+						<span>Сравнить</span>
+					</label>
+				</div>
+			</div>
+			
 		</div>
+
 		<?
 	}
 	?>

@@ -12,7 +12,10 @@
 /** @var CBitrixComponent $component */
 
 $this->setFrameMode(true);
+
 ?>
+
+
 
 <?$APPLICATION->IncludeComponent("bitrix:catalog.compare.result", "bootstrap_v4",array(
 		"IBLOCK_TYPE" => $arParams["IBLOCK_TYPE"],

@@ -206,7 +206,9 @@ $curPage = $APPLICATION->GetCurPage(true);
 			<!--endregion-->
 		</div>
 		
-		<div class="compare_list_count">
+		<?//Подключаем компонент сравнения ?>
+		
+		<div id="compare_list_count">
 			<?
 				$APPLICATION->IncludeComponent(
 					"bitrix:catalog.compare.list", 
@@ -219,7 +221,7 @@ $curPage = $APPLICATION->GetCurPage(true);
 						"AJAX_OPTION_STYLE" => "Y",
 						"AJAX_OPTION_HISTORY" => "N",
 						"DETAIL_URL" => "#SECTION_CODE#",
-						"COMPARE_URL" => "/catalog/compare.php",
+						"COMPARE_URL" => "/catalog/compare/",
 						"NAME" => "CATALOG_COMPARE_LIST",
 						"AJAX_OPTION_ADDITIONAL" => ""
 					),
