@@ -229,6 +229,21 @@ $curPage = $APPLICATION->GetCurPage(true);
 				);
 			?>
 		</div>
+	<div class="error-sender-div">
+			<?
+				$APPLICATION->IncludeComponent(
+					"samson:error.send.message",
+					".default",
+					array(
+						"MAIL_SENDER" => "php",
+						"EMAIL_FOR_ERRORS" => "krafter2006@yandex.ru",
+						"COMPONENT_TEMPLATE" => ".default",
+					),
+					false
+				);
+			?>
+	</div>
+
 	</header>
 
 	<div class="workarea">
