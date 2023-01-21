@@ -235,6 +235,9 @@ $curPage = $APPLICATION->GetCurPage(true);
 					"samson:error.send.message",
 					".default",
 					array(
+						"MAIL_SENDER" => "php",
+						"EMAIL_FOR_ERRORS" => "krafter2006@yandex.ru",
+						"COMPONENT_TEMPLATE" => ".default",
 					),
 					false
 				);
