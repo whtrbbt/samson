@@ -31,11 +31,11 @@ function SendError(event, formElem)
                         sessid: BX.bitrix_sessid()
         
                     },
-                    success: function(data){
+                    onsuccess: function(data){
                         console.log ('OK');
                         
                     },
-                    error: function (request, status, error) {
+                    onfailure: function (request, status, error) {
                         console.log(request);
                         console.log(status);
                         console.log(error);
