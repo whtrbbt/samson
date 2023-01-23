@@ -11,6 +11,8 @@ use Bitrix\Main\Loader;
 
 global $APPLICATION;
 
+$arParams['DISPLAY_COMPARE']=true;
+
 if (!empty($templateData['TEMPLATE_LIBRARY']))
 {
 	$loadCurrency = false;
