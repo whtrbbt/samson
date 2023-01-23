@@ -33,6 +33,7 @@ $curPage = $APPLICATION->GetCurPage(true);
 		<div class="bx-header-section container">
 			<!--region bx-header-->
 			<div class="row pt-0 pt-md-3 mb-3 align-items-center" style="position: relative;">
+
 				<div class="d-block d-md-none bx-menu-button-mobile" data-role='bx-menu-button-mobile-position'></div>
 				<div class="col-12 col-md-auto bx-header-logo">
 					<a class="bx-logo-block d-none d-md-block" href="<?=SITE_DIR?>">
@@ -57,6 +58,8 @@ $curPage = $APPLICATION->GetCurPage(true);
 						);?>
 					</a>
 				</div>
+				
+
 
 				<div class="col-auto d-none d-md-block bx-header-personal">
 					<?$APPLICATION->IncludeComponent("bitrix:sale.basket.basket.line", "bootstrap_v4", Array(
@@ -109,8 +112,23 @@ $curPage = $APPLICATION->GetCurPage(true);
 								</div>
 							</div>
 						</div>
+						<div>
+						<!--Подключаем ссылку на страницу покупки через ID-->
+						<?
+							$APPLICATION->IncludeComponent(
+								"samson:catalog.buy.code",
+								"link",
+							array(
+								
+							),
+							false
+							);
+						?>
+						</div>
 					</div>
+
 				</div>
+
 			</div>
 			<!--endregion-->
 
